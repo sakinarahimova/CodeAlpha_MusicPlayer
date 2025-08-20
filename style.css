@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+main{
+    padding: 30px;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(325deg, #2C1435, #4A1F57 , #702B81);
+}
+.first-section{
+    position: static;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(320px,1fr));
+    gap: 20px;
+}
+.left-side{
+    height: 256px;
+    display: flex;
+    gap: 10px;
+    align-content: space-between;
+    flex-direction: column;
+}
+.advertisement{
+    display: flex;
+    gap: 30px;
+    padding-right: 20px;
+}
+.advertisement img{
+    width: 175.5px;
+}
+.slogan{
+    display: flex;
+    align-items: center;
+}
+.slogan h3{
+    font-size: 78px;
+    color: white;
+    height: 70px;
+}
+.slogan div p{
+    width: 260px;
+    font-size: 42px;
+    color: white;
+}
+.slogan p{
+    margin-top: 6px;
+    width: 120px;
+    font-size: 30px;
+    color: white;
+}
+.input-search input{
+    width: 100%;
+    height: 90px;
+    padding: 25px 33px;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    font-size: 30px;
+}
+.input-search input::placeholder{
+    color: white;
+    font-size: 30px;
+    opacity: 1;
+}
+.right-side{
+    position: relative;
+    height: 256px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+.playing-photo img{
+    margin-left: 46px;
+    width: 170px;
+    height: 170px;
+    border: 1px solid #702B81;
+    border-radius: 100px;
+}
+.playing-info{
+    width: 280px;
+    /* height: auto; */
+}
+.playing-info .title{
+    font-family: "Itim", cursive;
+    font-size: 30px;
+    color: white;
+}
+.playing-info .artist{
+    font-family: "Itim", cursive;
+    font-size: 24px;
+    color: white;
+}
+.progress {
+    margin-top: 10px;
+    width: 100%;
+}
+.progress input[type="range"]{
+    width: 100%;
+}
+.controls{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.controls .prev-btn img{
+    width: 25px;
+}
+.controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.controls button img{
+    width: 20px;
+}
+.volume{
+    position: absolute;
+    right: -30px;
+}
+.volume input[type="range"]{
+    -webkit-appearance: none;
+    transform: rotate(-90deg);
+    width: 195px;
+    height: 32px;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.volume input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    background: #702B81;
+    border-radius: 0 30px 30px 0;
+    /* border-radius: 40px; */
+    cursor: pointer;
+}
+.second-section{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+/* Default: horizontal scroll */
+.carousel {
+    margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+.card {
+  flex: 0 0 200px;
+  height: 370px;
+  background: #444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  scroll-snap-align: start;
+}
+
+/* Responsive: vertical scroll under 650px */
+@media (max-width: 650px) {
+    main{
+        height: auto;
+    }
+    .first-section{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .second-section{
+        margin-top: 300px;
+    }
+  .carousel {
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card {
+    flex: 0 0 auto;   /* let height control size */
+    width: 100%;      /* take full width on mobile */
+    height: 80px;    /* smaller height so it fits better */
+  }
+}

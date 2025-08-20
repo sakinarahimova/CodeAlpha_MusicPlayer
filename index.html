@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <section class="first-section">
+      <div class="left-side">
+        <div class="advertisement">
+          <img src="./icons/musicicon.svg" alt="">
+          <div class="slogan">
+            <div>
+              <h3>LISTEN</h3>
+              <p>RIGHT NOW</p>
+            </div>
+            <p>to the trending music</p>
+          </div>
+        </div>
+        <div class="input-search">
+          <input type="text" placeholder="SEARCH MUSIC">
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="playing-photo">
+          <img src="./Screenshot 2025-08-19 183619.png" alt="">
+        </div>
+        <div class="playing-info">
+          <img src="./audiowave.svg" alt="">
+          <div class="title">Snowman</div>
+          <div class="artist">Artist Name</div>
+          <div class="progress">
+            <input type="range" class="progressBar" value="0" min="0" max="100">
+          </div>
+          <div class="controls">
+            <button class="prev-btn"><img src="./icons/prev.svg" alt=""></button>
+            <button class="play-btn"><img src="./icons/play.svg" alt=""></button>
+            <button class="next-btn"><img src="./icons/next.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="volume">
+          <input type="range" class="volume-bar" min="0" max="1" step="0.01" value="1">
+        </div>
+      </div>
+      <audio class="audio" src="snowman.mp3"></audio>
+    </section>
+
+
+    <section class="second-section">
+      <div class="carousel">
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+        <div class="card">
+          <h3>Song Title</h3>
+          <p>artist name</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+const volume = document.querySelector(".volume input[type='range']");
+
+function updateFill() {
+    const percent = (volume.value - volume.min) / (volume.max - volume.min) * 100;
+    volume.style.background = `linear-gradient(to right, #702B81 ${percent}%, white ${percent}%)`;
+}
+updateFill();
+
+
+volume.addEventListener("input", updateFill);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Music Player</title>
+  <style>
+    body {
+      background: #2c003e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    .player {
+      background: linear-gradient(135deg, #3d0066, #5c0080);
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .info {
+      flex: 1;
+      margin: 0 20px;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .artist {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .controls button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .progress {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .progress input[type="range"] {
+      width: 100%;
+    }
+  
+    .volume {
+      display: flex;
+      align-items: center;
+      height: 100px;
+    }
+    .volume input[type="range"] {
+      -webkit-appearance: none;
+      width: 100px;
+      height: 8px;
+      background: #999;
+      border-radius: 4px;
+      transform: rotate(-90deg);
+      cursor: pointer;
+    }
+    .volume input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #a64ca6;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+
+    <div class="album-art" style="width:80px;height:80px;border-radius:50%;background:white;"></div>
+
+
+    <div class="info">
+      <div class="title">Snowman</div>
+      <div class="artist">Artist Name</div>
+      <div class="progress">
+        <input type="range" id="progressBar" value="0" min="0" max="100">
+      </div>
+      <div class="controls">
+        <button id="prevBtn">⏮️</button>
+        <button id="playBtn">▶️</button>
+        <button id="nextBtn">⏭️</button>
+      </div>
+    </div>
+
+    <div class="volume">
+      <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+
+  <audio id="audio" src="snowman.mp3"></audio>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("playBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const progressBar = document.getElementById("progressBar");
+    const volumeBar = document.getElementById("volumeBar");
+
+    let isPlaying = false;
+
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        audio.pause();
+        playBtn.textContent = "▶️";
+      } else {
+        audio.play();
+        playBtn.textContent = "⏸️";
+      }
+      isPlaying = !isPlaying;
+    });
+
+
+    audio.addEventListener("timeupdate", () => {
+      progressBar.value = (audio.currentTime / audio.duration) * 100;
+    });
+
+    progressBar.addEventListener("input", () => {
+      audio.currentTime = (progressBar.value / 100) * audio.duration;
+    });
+
+    volumeBar.addEventListener("input", () => {
+      audio.volume = volumeBar.value;
+    });
+
+
+    prevBtn.addEventListener("click", () => {
+      audio.currentTime = 0;
+    });
+    nextBtn.addEventListener("click", () => {
+      audio.currentTime = audio.duration - 2;
+    });
+  </script>
+</body>
+</html> -->
+
