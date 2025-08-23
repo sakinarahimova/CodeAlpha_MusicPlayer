@@ -211,7 +211,6 @@ main{
 .card {
   flex: 0 0 200px;
   height: 370px;
-  background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);
   color: #fff;
   display: flex;
   width: 200px;
@@ -221,6 +220,7 @@ main{
   border-radius: 30px;
   scroll-snap-align: start;
   gap: 20px;
+  background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);
 }
 .card h3{
     overflow: hidden;
@@ -234,8 +234,13 @@ main{
     border: 1px solid #702B81;
     border-radius: 100px;
 }
+.color-0{ background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);}
+.color-1{ background: linear-gradient(45deg , #A06D52 , #C58F73, #C58F73);}
+.color-2{ background: linear-gradient(45deg , #9C9154 , #BFB470, #E3DDA8);}
+.color-3{background: linear-gradient(45deg , #4C6F82 , #6B8FA3, #9DBAC9);}
+.color-4{ background: linear-gradient(45deg , #8B5D66 , #A87A83, #D1ACB1);}
+.color-5{ background: linear-gradient(45deg , #5D7C65 , #7F9E86, #ADC7B3);}
 
-/* Responsive: vertical scroll under 650px */
 @media (max-width: 650px) {
     main{
         height: auto;

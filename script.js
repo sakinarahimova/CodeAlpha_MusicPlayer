@@ -24,7 +24,9 @@ const trending = [
   { title: "Die With A Smile", artist: "Lady Gaga & Bruno Mars" },
   { title: "Perfect", artist: "Ed Sheeran" },
 ];
+const colorSet = [
 
+]
 let callbackCounter = 0;
 
 function updateFill(element) {
@@ -99,6 +101,7 @@ function buildCarousel(list) {
   list.forEach((song, idx) => {
     const card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add(`color-${idx % 6}`);
     card.innerHTML = `
       <img src="${song.img}" alt="${song.title}">
       <h3>${song.title}</h3>
