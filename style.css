@@ -163,7 +163,7 @@ main{
     appearance: none;
     width: 32px;
     height: 32px;
-    background: #702B81;
+    background: #9949ad;
     border-radius: 0 30px 30px 0;
     cursor: pointer;
 }
@@ -310,172 +310,155 @@ main{
 
 @media (max-width: 940px) {
    main{
+        padding: 20px;  
         height: auto;
     }
-.first-section{
-    display: flex;
-    flex-direction: column;
-}
-.left-side{
-    height: 190px;
-}
-.advertisement{
-    height: 130px;
-}
-.advertisement-logo{
-    width: 16%;
-}
-.advertisement-slogan{
-    width: 35%;
-}
-.input-search{
-    height: 60px;
-}
-.input-search input{
-    padding: 20px 26px;
-    font-size: 23px;
-}
-.input-search button{
-    width: 60px;
-}
-.input-search input::placeholder{
-    color: white;
-    font-size: 23px;
-    opacity: 1;
-}
-.right-side{
-    /* height: 240px; */
-    height: auto;
-    gap: 15px;
-}
-.playing-photo img{
-    margin-left: 20px;
-    width: 110px;
-    height: 110px;
-}
-.playing-info{
-    margin-top: 25px;
-    width: 40%;
-}
-.playing-info .title{
-    font-size: 25px;
-    line-height: 21px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    overflow: visible;
-}
-.playing-info .artist{
-    font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 10px;
-    overflow: visible;
-}
-.progress {
-    margin-top: 10px;
-    width: 100%;
-}
-.progress input[type="range"]::-webkit-slider-runnable-track{
-    border-radius: 30px;
-    height: 6px;
-}
-.progress input[type="range"]::-webkit-slider-thumb{
-    height: 15px;
-    border-radius: 100px;
-    width: 15px;
-    margin-top: -5px;
+    .first-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .left-side{
+        height: auto;
+    }
+    .advertisement{
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .advertisement-logo{
+        width: 23%;
+    }
+    .advertisement-slogan{
+        width: 46%;
+    }
+    .input-search{
+        height: 60px;
+    }
+    .input-search input{
+        padding: 20px 26px;
+        font-size: 23px;
+    }
+    .input-search button{
+        width: 60px;
+    }
+    .input-search input::placeholder{
+        color: white;
+        font-size: 23px;
+        opacity: 1;
+    }
+    .right-side{
+        /* height: 240px; */
+        height: auto;
+        gap: 15px;
+    }
+    .playing-photo img{
+        margin-left: 20px;
+        width: 110px;
+        height: 110px;
+    }
+    .playing-info{
+        margin-top: 25px;
+        width: 40%;
+    }
+    .playing-info .title{
+        font-size: 25px;
+        line-height: 21px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        overflow: visible;
+    }
+    .playing-info .artist{
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 10px;
+        overflow: visible;
+    }
+    .progress {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .progress input[type="range"]::-webkit-slider-runnable-track{
+        border-radius: 30px;
+        height: 6px;
+    }
+    .progress input[type="range"]::-webkit-slider-thumb{
+        height: 15px;
+        border-radius: 100px;
+        width: 15px;
+        margin-top: -5px;
 
-}
-.progress input[type="range"]{
-    width: 100%;
-}
-.controls{
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-.controls .prev-btn img{
-    width: 25px;
-}
-.controls button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-.controls button img{
-    width: 20px;
-}
-.volume{
-    position: absolute;
-    right: -30px;
-}
-.volume input[type="range"]{
-    width: 150px;
-    height: 25px;
-}
-.volume input[type="range"]::-webkit-slider-thumb {
-    width: 25px;
-    height: 25px;
-}
-.second-section{
-    width: 100%;
-}
-.carousel {
-    margin-top: 30px;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    gap: 30px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-}
-
-.card {
-    flex: 0 0 auto;
-    height: 150px;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    border-radius: 30px;
-    /* gap: 20px; */
-}
-.card h3{
-    text-align: left;
-    width: auto;
-    max-width: 100%;
-}
-.card p{
-    text-align: left;
-}
-.card img{
-    margin: 0 20px;
-    width: 110px;
-    height: 110px;
-}
-    /* .first-section{
-        position: fixed;
-        top: 0;
-        left: 0;
+    }
+    .progress input[type="range"]{
+        width: 100%;
+    }
+    .controls{
+        margin-top: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    .controls .prev-btn img{
+        width: 25px;
+    }
+    .controls button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .controls button img{
+        width: 20px;
+    }
+    .volume{
+        position: absolute;
+        right: -30px;
+    }
+    .volume input[type="range"]{
+        width: 150px;
+        height: 25px;
+    }
+    .volume input[type="range"]::-webkit-slider-thumb {
+        width: 25px;
+        height: 25px;
     }
     .second-section{
-        margin-top: 300px;
-    } */
-  /* .carousel {
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    height: 100%;
-    width: 100%;
-  } */
+        width: 100%;
+    }
+    .carousel {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+    }
 
-  /* .card {
-    flex: 0 0 auto;  
-    width: 100%;      
-    height: 80px;    
-  } */
+    .card {
+        flex: 0 0 auto;
+        height: 150px;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        border-radius: 30px;
+        /* gap: 20px; */
+    }
+    .card h3{
+        text-align: left;
+        width: auto;
+        max-width: 100%;
+    }
+    .card p{
+        text-align: left;
+    }
+    .card img{
+        margin: 0 20px;
+        width: 110px;
+        height: 110px;
+    }
+}
+@media screen and (max-width: 600px) {
+    
 }
