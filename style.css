@@ -5,10 +5,17 @@
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
 }
+
+footer h1{
+    background: yellow;
+    height: 300px;
+    width: 100vw;
+}
 main{
     padding: 30px;
     height: 100vh;
-    width: 100%;
+    /* width: 100%; */
+    width: auto;
     background: linear-gradient(325deg, #2b1235, #542662 , #8b3a9f);
 }
 .first-section{
@@ -62,6 +69,7 @@ main{
 }
 .right-side{
     position: relative;
+    overflow: hidden;
     height: 240px;
     display: flex;
     gap: 40px;
@@ -183,7 +191,7 @@ main{
 .carousel::-webkit-scrollbar { display: none; }
 
 .card{
-    flex: 0 0 200px;
+    /* flex: 0 0 200px; */
     height: 370px;
     color: #fff;
     display: flex;
@@ -220,6 +228,9 @@ main{
 
 
 @media screen and (max-width: 1200px) {
+    main{
+        /* width: 100vw; */
+    }
     .left-side{
         height: 220px;
     }
@@ -412,7 +423,7 @@ main{
     }
     .volume{
         position: absolute;
-        right: -30px;
+        right: -35px;
     }
     .volume input[type="range"]{
         width: 150px;
@@ -430,7 +441,7 @@ main{
         display: flex;
         width: 100%;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         overflow-x: hidden;
         overflow-y: auto;
         scroll-snap-type: y mandatory;
@@ -464,8 +475,11 @@ main{
         padding: 10px;
     }
     .playing-photo img{
-        margin-left: 15px;
+        margin-left: 20px;
         width: 100px;
         height: 100px;
+    }
+    .volume{
+        right: -45px;
     }
 }
