@@ -9,14 +9,15 @@ const artist = document.querySelector(".playing-info .artist");
 const playingPhoto = document.querySelector(".playing-photo img");
 const carousel = document.querySelector(".carousel");
 const searchInput = document.querySelector(".input-search input");
-const searchBtn = document.querySelector(".input-search img");
+const searchBtn = document.querySelector(".input-search button");
 
 let songs = [];
 let songIndex = 0;
 let isPlaying = false;
 
-const trending = [
+const trendingSongs = [
   { title: "Snowman", artist: "Sia" },
+  { title: "Forever Young", artist: "Alphaville"},
   { title: "Sweater Weather", artist: "The Neighbourhood" },
   { title: "Diet Mountain Dew", artist: "Lana Del Rey" },
   { title: "Shape of My Heart", artist: "Sting" },
@@ -24,18 +25,17 @@ const trending = [
   { title: "Die With A Smile", artist: "Lady Gaga & Bruno Mars" },
   { title: "Perfect", artist: "Ed Sheeran" },
 ];
-const colorSet = [
 
-]
 let callbackCounter = 0;
 
-function updateFill(element) {
+function updateFill(element){
   const percent = (element.value - element.min) / (element.max - element.min) * 100;
   element.style.background = `linear-gradient(to right, #702B81 ${percent}%, white ${percent}%)`;
 }
 
-function loadSong(index) {
+function loadSong(index){
   const song = songs[index];
+  if (!song) return;
   title.textContent = song.title;
   artist.textContent = song.artist;
   audio.src = song.src;
@@ -46,30 +46,30 @@ function loadSong(index) {
   isPlaying = false;
 }
 
-function playSong() {
+function playSong(){
   audio.play().then(() => {
     isPlaying = true;
-    playBtn.querySelector("img").src = "./icons/pausa.svg";
+    playBtn.querySelector("img").src = "./icons/pause.svg";
   }).catch(err => console.log(err));
 }
 
-function pauseSong() {
+function pauseSong(){
   audio.pause();
   isPlaying = false;
   playBtn.querySelector("img").src = "./icons/play.svg";
 }
 
-function togglePlay() {
+function togglePlay(){
   isPlaying ? pauseSong() : playSong();
 }
 
-function prevSong() {
+function prevSong(){
   songIndex = (songIndex - 1 + songs.length) % songs.length;
   loadSong(songIndex);
   playSong();
 }
 
-function nextSong() {
+function nextSong(){
   songIndex = (songIndex + 1) % songs.length;
   loadSong(songIndex);
   playSong();
@@ -98,18 +98,17 @@ audio.addEventListener("ended", nextSong);
 
 function buildCarousel(list) {
   carousel.innerHTML = "";
-  list.forEach((song, idx) => {
+  list.forEach((song, id) => {
     const card = document.createElement("div");
-    card.classList.add("card");
-    card.classList.add(`color-${idx % 6}`);
+    card.classList.add("card", `color-${id % 6}`);
     card.innerHTML = `
       <img src="${song.img}" alt="${song.title}">
-      <h3>${song.title}</h3>
-      <p>${song.artist}</p>
-    `;
+      <div>
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+      </div>`;
     card.addEventListener("click", () => {
-      songs.push(song);
-      songIndex = songs.length - 1;
+      songIndex = id;
       loadSong(songIndex);
       audio.onloadedmetadata = () => {
         playSong();
@@ -128,7 +127,7 @@ function fetchDeezerTrack(song, callbackName) {
 }
 
 function fetchSongs() {
-  trending.forEach(song => {
+  trendingSongs.forEach(song => {
     const callbackName = `deezerCallback${callbackCounter++}`;
     window[callbackName] = function(data) {
       if (data.data && data.data.length > 0) {
@@ -147,7 +146,7 @@ function fetchSongs() {
           img: "./images/default.jpg"
         });
       }
-      if (songs.length === trending.length) {
+      if (songs.length === trendingSongs.length) {
         loadSong(0);
         buildCarousel(songs);
       }
@@ -168,6 +167,9 @@ function searchSong(query) {
         img: track.album.cover_medium
       }));
       buildCarousel(searchResults);
+      songs = searchResults;
+      songIndex = 0;
+      loadSong(0);
     } else {
       alert("No results found!");
     }

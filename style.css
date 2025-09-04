@@ -9,69 +9,51 @@ main{
     padding: 30px;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(325deg, #2C1435, #4A1F57 , #702B81);
+    background: linear-gradient(325deg, #2b1235, #542662 , #8b3a9f);
 }
 .first-section{
     position: static;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(320px,1fr));
+    grid-template-columns: repeat(auto-fit , minmax(400px,1fr));
     gap: 20px;
 }
 .left-side{
-    height: 256px;
-    display: flex;
-    gap: 10px;
-    align-content: space-between;
-    flex-direction: column;
+    height: 240px;
 }
 .advertisement{
     display: flex;
     gap: 30px;
-    padding-right: 20px;
+    height: 150px;
 }
-.advertisement img{
-    width: 175.5px;
+.advertisement-logo{
+    width: 23%;
 }
-.slogan{
-    display: flex;
-    align-items: center;
-}
-.slogan h3{
-    font-size: 78px;
-    color: white;
-    height: 70px;
-}
-.slogan div p{
-    width: 260px;
-    font-size: 42px;
-    color: white;
-}
-.slogan p{
-    margin-top: 6px;
-    width: 120px;
-    font-size: 30px;
-    color: white;
+.advertisement-slogan{
+    width: 55%;
 }
 .input-search{
     display: flex;
     border: 2px solid white;
     border-radius: 30px;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
 }
 .input-search input{
     border: none;
     width: 90%;
     color: white;
-    height: 90px;
     padding: 25px 33px;
     background: none;
     font-size: 30px;
 }
-.input-search img{
-    position: absolute;
-    right: 25px;
-    top: 30px;
+.input-search button{
+    cursor: pointer;
+    background: none;
+    border-radius: 30px;
+    width: 90px;
+    border: none;
 }
 .input-search input::placeholder{
     color: white;
@@ -80,7 +62,7 @@ main{
 }
 .right-side{
     position: relative;
-    height: 256px;
+    height: 240px;
     display: flex;
     gap: 40px;
     align-items: center;
@@ -88,31 +70,58 @@ main{
     border-radius: 30px;
 }
 .playing-photo img{
-    margin-left: 46px;
-    width: 170px;
-    height: 170px;
+    margin-left: 30px;
+    width: 140px;
+    height: 140px;
     border: 1px solid #702B81;
     border-radius: 100px;
 }
 .playing-info{
-    width: 280px;
-    /* height: auto; */
+    width: 40%;
+}
+.playing-info img{
+    width: 100%;
+    margin-bottom: 5px;
 }
 .playing-info .title{
     font-family: "Itim", cursive;
     font-size: 30px;
     color: white;
-    height: 35px;
+    max-height: 50px;
+    line-height: 25px;
+    margin-bottom: 5px;
     overflow: hidden;
 }
 .playing-info .artist{
     font-family: "Itim", cursive;
     font-size: 24px;
+    line-height: 20px;
     color: white;
+    margin-bottom: 5px;
 }
 .progress {
     margin-top: 10px;
     width: 100%;
+}
+.progress input[type="range"]{
+    -webkit-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.progress input[type="range"]::-webkit-slider-runnable-track{
+    border-radius: 30px;
+    height: 6px;
+}
+.progress input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    background: #702B81;
+    height: 15px;
+    border-radius: 100px;
+    width: 15px;
+    margin-top: -5px;
+
 }
 .progress input[type="range"]{
     width: 100%;
@@ -142,7 +151,7 @@ main{
 .volume input[type="range"]{
     -webkit-appearance: none;
     transform: rotate(-90deg);
-    width: 195px;
+    width: 180px;
     height: 32px;
     background: white;
     border-radius: 30px;
@@ -156,83 +165,55 @@ main{
     height: 32px;
     background: #702B81;
     border-radius: 0 30px 30px 0;
-    /* border-radius: 40px; */
     cursor: pointer;
 }
 .second-section{
     display: flex;
     gap: 10px;
 }
-
-
-
-
-.progress input[type="range"]{
-    -webkit-appearance: none;
-    /* height: 15px; */
-    background-color: #fff;
-    /* background: none; */
-    /* overflow: hidden; */
-    cursor: pointer;
-    border-radius: 30px;
-}
-.progress input[type="range"]::-webkit-slider-runnable-track{
-    width: 280px;
-    border-radius: 30px;
-    height: 6px;
-}
-.progress input[type="range"]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    appearance: none;
-    background: #702B81;
-    height: 15px;
-    border-radius: 100px;
-    width: 15px;
-    margin-top: -5px;
-
-}
 .progress input[type="range"]::-moz-progress-bar{
     background-color: #2C1435;
 }
-
-/* Default: horizontal scroll */
 .carousel {
     margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 .carousel::-webkit-scrollbar { display: none; }
 
 .card {
-  flex: 0 0 200px;
-  height: 370px;
-  color: #fff;
-  display: flex;
-  width: 200px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 30px;
-  scroll-snap-align: start;
-  gap: 20px;
-  background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);
+    flex: 0 0 200px;
+    height: 370px;
+    color: #fff;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    scroll-snap-align: start;
+    background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);
 }
 .card h3{
     overflow: hidden;
+    max-height: 48px;
     width: 150px;
-    height: 50px;
+    text-align: center;
+}
+.card p{
     text-align: center;
 }
 .card img{
+    margin-top: 55px;
     width: 170px;
     height: 170px;
     border: 1px solid #702B81;
     border-radius: 100px;
+    margin-bottom: 20px;
 }
 .color-0{ background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);}
 .color-1{ background: linear-gradient(45deg , #A06D52 , #C58F73, #C58F73);}
@@ -241,30 +222,260 @@ main{
 .color-4{ background: linear-gradient(45deg , #8B5D66 , #A87A83, #D1ACB1);}
 .color-5{ background: linear-gradient(45deg , #5D7C65 , #7F9E86, #ADC7B3);}
 
-@media (max-width: 650px) {
-    main{
+
+@media (max-width: 1200px) {
+.left-side{
+    height: 220px;
+}
+.advertisement{
+    height: 150px;
+}
+.advertisement-logo{
+    width: 20%;
+}
+.advertisement-slogan{
+    width: 50%;
+}
+.input-search{
+    height: 70px;
+}
+.input-search input{
+    padding: 23px 30px;
+    font-size: 27px;
+}
+.input-search button{
+    width: 70px;
+}
+.input-search input::placeholder{
+    font-size: 24px;
+}
+.right-side{
+    height: 220px;
+    gap: 20px;
+}
+.playing-photo img{
+    margin-left: 25px;
+    width: 120px;
+    height: 120px;
+}
+.playing-info{
+    width: 45%;
+}
+.playing-info .title{
+    font-size: 27px;
+    max-height: 37px;
+    line-height: 19px;
+}
+.playing-info .artist{
+    font-size: 20px;
+    line-height: 18px;
+    margin-bottom: 3px;
+}
+.progress {
+    margin-top: 7px;
+}
+.controls .prev-btn img{
+    width: 22px;
+}
+.controls button img{
+    width: 17px;
+}
+.volume{
+    right: -43px;
+}
+.volume input[type="range"]{
+    width: 150px;
+    height: 25px;
+}
+.volume input[type="range"]::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+}
+.second-section{
+    display: flex;
+    gap: 10px;
+}
+.card {
+    flex: 0 0 180px;
+    height: 350px;
+    width: 200px;
+}
+
+.card img{
+    width: 150px;
+    height: 150px;
+}
+
+}
+
+@media (max-width: 940px) {
+   main{
         height: auto;
     }
-    .first-section{
+.first-section{
+    display: flex;
+    flex-direction: column;
+}
+.left-side{
+    height: 190px;
+}
+.advertisement{
+    height: 130px;
+}
+.advertisement-logo{
+    width: 16%;
+}
+.advertisement-slogan{
+    width: 35%;
+}
+.input-search{
+    height: 60px;
+}
+.input-search input{
+    padding: 20px 26px;
+    font-size: 23px;
+}
+.input-search button{
+    width: 60px;
+}
+.input-search input::placeholder{
+    color: white;
+    font-size: 23px;
+    opacity: 1;
+}
+.right-side{
+    /* height: 240px; */
+    height: auto;
+    gap: 15px;
+}
+.playing-photo img{
+    margin-left: 20px;
+    width: 110px;
+    height: 110px;
+}
+.playing-info{
+    margin-top: 25px;
+    width: 40%;
+}
+.playing-info .title{
+    font-size: 25px;
+    line-height: 21px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    overflow: visible;
+}
+.playing-info .artist{
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    overflow: visible;
+}
+.progress {
+    margin-top: 10px;
+    width: 100%;
+}
+.progress input[type="range"]::-webkit-slider-runnable-track{
+    border-radius: 30px;
+    height: 6px;
+}
+.progress input[type="range"]::-webkit-slider-thumb{
+    height: 15px;
+    border-radius: 100px;
+    width: 15px;
+    margin-top: -5px;
+
+}
+.progress input[type="range"]{
+    width: 100%;
+}
+.controls{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.controls .prev-btn img{
+    width: 25px;
+}
+.controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.controls button img{
+    width: 20px;
+}
+.volume{
+    position: absolute;
+    right: -30px;
+}
+.volume input[type="range"]{
+    width: 150px;
+    height: 25px;
+}
+.volume input[type="range"]::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+}
+.second-section{
+    width: 100%;
+}
+.carousel {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.card {
+    flex: 0 0 auto;
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-radius: 30px;
+    /* gap: 20px; */
+}
+.card h3{
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+}
+.card p{
+    text-align: left;
+}
+.card img{
+    margin: 0 20px;
+    width: 110px;
+    height: 110px;
+}
+    /* .first-section{
         position: fixed;
         top: 0;
         left: 0;
     }
     .second-section{
         margin-top: 300px;
-    }
-  .carousel {
+    } */
+  /* .carousel {
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
     height: 100%;
     width: 100%;
-  }
+  } */
 
-  .card {
-    flex: 0 0 auto;   /* let height control size */
-    width: 100%;      /* take full width on mobile */
-    height: 80px;    /* smaller height so it fits better */
-  }
+  /* .card {
+    flex: 0 0 auto;  
+    width: 100%;      
+    height: 80px;    
+  } */
 }
