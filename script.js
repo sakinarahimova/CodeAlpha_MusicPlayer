@@ -49,7 +49,7 @@ function loadSong(index){
 function playSong(){
   audio.play().then(() => {
     isPlaying = true;
-    playBtn.querySelector("img").src = "./icons/pause.svg";
+    playBtn.querySelector("img").src = "./icons/pausa.svg";
   }).catch(err => console.log(err));
 }
 

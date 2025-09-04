@@ -8,7 +8,7 @@
 main{
     padding: 30px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(325deg, #2b1235, #542662 , #8b3a9f);
 }
 .first-section{
@@ -167,14 +167,10 @@ main{
     border-radius: 0 30px 30px 0;
     cursor: pointer;
 }
-.second-section{
-    display: flex;
-    gap: 10px;
-}
 .progress input[type="range"]::-moz-progress-bar{
     background-color: #2C1435;
 }
-.carousel {
+.carousel{
     margin-top: 40px;
     display: flex;
     flex-direction: row;
@@ -186,7 +182,7 @@ main{
 }
 .carousel::-webkit-scrollbar { display: none; }
 
-.card {
+.card{
     flex: 0 0 200px;
     height: 370px;
     color: #fff;
@@ -194,6 +190,7 @@ main{
     width: 200px;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
     border-radius: 30px;
     scroll-snap-align: start;
     background: linear-gradient(45deg , #6E5A8A , #8A79A8, #B8A6CC);
@@ -201,14 +198,13 @@ main{
 .card h3{
     overflow: hidden;
     max-height: 48px;
-    width: 150px;
     text-align: center;
 }
 .card p{
     text-align: center;
 }
 .card img{
-    margin-top: 55px;
+    margin-top: 45px;
     width: 170px;
     height: 170px;
     border: 1px solid #702B81;
@@ -223,10 +219,10 @@ main{
 .color-5{ background: linear-gradient(45deg , #5D7C65 , #7F9E86, #ADC7B3);}
 
 
-@media (max-width: 1200px) {
-.left-side{
-    height: 220px;
-}
+@media screen and (max-width: 1200px) {
+    .left-side{
+        height: 220px;
+    }
 .advertisement{
     height: 150px;
 }
@@ -295,12 +291,14 @@ main{
     display: flex;
     gap: 10px;
 }
+.carousel{
+    gap: 20px;
+}
 .card {
     flex: 0 0 180px;
     height: 350px;
-    width: 200px;
+    width: 180px;
 }
-
 .card img{
     width: 150px;
     height: 150px;
@@ -308,7 +306,7 @@ main{
 
 }
 
-@media (max-width: 940px) {
+@media screen and (max-width: 940px) {
    main{
         padding: 20px;  
         height: auto;
@@ -356,6 +354,7 @@ main{
         height: 110px;
     }
     .playing-info{
+        height: auto;
         margin-top: 25px;
         width: 40%;
     }
@@ -363,6 +362,8 @@ main{
         font-size: 25px;
         line-height: 21px;
         margin-top: 5px;
+        max-height: fit-content;
+        /* max-height: 40px; */
         margin-bottom: 10px;
         overflow: visible;
     }
@@ -460,5 +461,12 @@ main{
     }
 }
 @media screen and (max-width: 600px) {
-    
+    main{
+        padding: 10px;
+    }
+    .playing-photo img{
+        margin-left: 15px;
+        width: 100px;
+        height: 100px;
+    }
 }
