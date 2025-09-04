@@ -30,7 +30,7 @@ let callbackCounter = 0;
 
 function updateFill(element){
   const percent = (element.value - element.min) / (element.max - element.min) * 100;
-  element.style.background = `linear-gradient(to right, #9949ad ${percent}%, white ${percent}%)`;
+  element.style.background = `linear-gradient(to right, #9b4eae ${percent}%, white ${percent}%)`;
 }
 
 function loadSong(index){
