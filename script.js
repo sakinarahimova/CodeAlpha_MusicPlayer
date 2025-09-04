@@ -17,12 +17,12 @@ let isPlaying = false;
 
 const trendingSongs = [
   { title: "Snowman", artist: "Sia" },
-  { title: "Forever Young", artist: "Alphaville"},
-  { title: "Sweater Weather", artist: "The Neighbourhood" },
-  { title: "Diet Mountain Dew", artist: "Lana Del Rey" },
-  { title: "Shape of My Heart", artist: "Sting" },
-  { title: "Those Eyes", artist: "New West" },
   { title: "Die With A Smile", artist: "Lady Gaga & Bruno Mars" },
+  { title: "Forever young", artist: "Alphaville"},
+  { title: "Diet Mountain Dew", artist: "Lana Del Rey" },
+  { title: "Sweater Weather", artist: "The Neighbourhood" },
+  { title: "Those Eyes", artist: "New West" },
+  { title: "Shape of My Heart", artist: "Sting" },
   { title: "Perfect", artist: "Ed Sheeran" },
 ];
 
