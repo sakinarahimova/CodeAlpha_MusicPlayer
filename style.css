@@ -66,6 +66,9 @@ main{
     font-size: 30px;
     opacity: 1;
 }
+.input-search input:focus{
+    outline: none;
+}
 .right-side{
     position: relative;
     overflow: hidden;
@@ -134,6 +137,9 @@ main{
 .progress input[type="range"]{
     width: 100%;
 }
+.progress input[type="range"]::-moz-progress-bar{
+    background-color: #2C1435;
+}
 .controls{
     margin-top: 5px;
     display: flex;
@@ -171,9 +177,6 @@ main{
     background: #9b4eae;
     border-radius: 0 30px 30px 0;
     cursor: pointer;
-}
-.progress input[type="range"]::-moz-progress-bar{
-    background-color: #2C1435;
 }
 .carousel{
     margin-top: 40px;
